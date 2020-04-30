@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>GoToHack</id>
   <name>Go To Hack</name>
-  <version>2.0</version>
+  <version>2.1</version>
   <vendor email="plugins@cooperdooper.org">CooperDooper</vendor>
 
   <description>
@@ -9,7 +9,7 @@
   </description>
 
   <change-notes>
-    <![CDATA[Version 2.0: Updated after many years, works for 2020.1 and later, deprecations removed.]]>
+    <![CDATA[Version 2.1: Adjust menu more reliably (sometimes did not happen right away).]]>
   </change-notes>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
@@ -24,7 +24,7 @@
   </extensions>
 
   <applicationListeners>
-    <listener class="org.cooperdooper.ideaplugin.gotohack.MenuInstaller" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+    <listener class="org.cooperdooper.ideaplugin.gotohack.MenuInstaller" topic="com.intellij.ide.AppLifecycleListener"/>
   </applicationListeners>
 
 </idea-plugin>
