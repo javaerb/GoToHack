@@ -14,18 +14,13 @@ public class MenuInstaller implements AppLifecycleListener {
 
     private static final String GOTO_MENU_ID = "EditorPopupMenu.GoTo";
 
-    private boolean loaded = false;
-
     @Override
     public void appFrameCreated(@NotNull List<String> commandLineArgs) {
-        if (!loaded) {
-            loaded = true; // regardless of outcome
-            ActionManager manager = ActionManager.getInstance();
-            DefaultActionGroup gotoPopup = (DefaultActionGroup) manager.getAction(GOTO_MENU_ID);
-            if (gotoPopup != null && gotoPopup.isPopup()) {
-                gotoPopup.setPopup(false);
-                gotoPopup.addSeparator();
-            }
+        ActionManager manager = ActionManager.getInstance();
+        DefaultActionGroup gotoPopup = (DefaultActionGroup) manager.getAction(GOTO_MENU_ID);
+        if (gotoPopup != null && gotoPopup.isPopup()) {
+            gotoPopup.setPopup(false);
+            gotoPopup.addSeparator();
         }
     }
 }
